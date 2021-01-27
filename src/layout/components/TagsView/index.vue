@@ -28,6 +28,7 @@
 <script>
 import ScrollPane from './ScrollPane'
 import path from 'path'
+import {ref} from 'vue'
 
 export default {
   components: { ScrollPane },
@@ -111,6 +112,7 @@ export default {
     },
     moveToCurrentTag() {
       const tags = this.$refs.tag
+      console.log(tags)
       this.$nextTick(() => {
         for (const tag of tags) {
           if (tag.to.path === this.$route.path) {
